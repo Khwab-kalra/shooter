@@ -12,12 +12,15 @@ int[][] blocks = {//this matrix define the world
     {0,1,1,1,1,1,0,1,0,0},
     {0,0,0,0,0,0,0,0,0,0},
   };
+Projectile[] bullets;/*******this array type won't work so java wali ArrayList vgerah ka use kro******/
+
 void setup(){
   size(300,300);//function don't allow variables as arguments);so adjust it according to vision factor
   player1 = new Player();
   player1 = new Player();
   background(0);
   frameRate(30);
+  
   
 }
 void draw(){
@@ -27,6 +30,10 @@ void draw(){
   //do things about player1 
   player1.show(awidth,aheight);player1.move(awidth,aheight);
   player1.update();
+
+  /********Do a loop to show all the bullets and remove one from array if its hit() returns true***********/
+  /******************Ek jab click kre tab player1.shoot() should be called howt to do that***************************/
+  
   //this thing is for the red boundary
   fill(255,0,0);stroke(255,0,0);
   line(width-1,height-1,width-1,0);line(width-1,height-1,0,height-1);
