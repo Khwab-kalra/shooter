@@ -2,6 +2,7 @@ class Player{
         //these x and y are the coordinates of the origin in offestted coordinate system
         public int x;
         public int y;
+        public float dir;//as an angle from +x direction (counter clockwise)
         public float visionFactor;
         public int size;
         //since we always show player rect at (this.visionFactor)*awidth/2,(this.visionFactor)*aheight/2
@@ -38,11 +39,11 @@ class Player{
       }
         //if pushes into blocks
         if(blocks[player1.block_y][player1.block_x] == 1){
-        println("blocakge",player1.block_x,player1.block_y,blocks[player1.block_x][player1.block_y]);
-        if(player1.velocityx == 1){player1.x -= 10;}
-        else if(player1.velocityx == -1){player1.x += 10-player1.size;}
-        if(player1.velocityy == 1){player1.y -= 10;}
-        else if(player1.velocityy == -1){player1.y += 10-player1.size;}
+          println("blocakge",player1.block_x,player1.block_y,blocks[player1.block_x][player1.block_y]);
+          if(player1.velocityx == 1){player1.x -= 10;}
+          else if(player1.velocityx == -1){player1.x += 10-player1.size;}
+          if(player1.velocityy == 1){player1.y -= 10;}
+          else if(player1.velocityy == -1){player1.y += 10-player1.size;}
     
         }
         
@@ -58,4 +59,9 @@ class Player{
       block_x = ((this.atx)/int(awidth/10) )%10 ; 
       block_y = ((this.aty)/int(aheight/10) )%10;
     }
+    void shoot(){
+      //Projectile bult = new Projectile(this);
+      /*********function to append bult to bullets array, defined in Game.pde**************/
+    } 
+    
 }
