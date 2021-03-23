@@ -30,6 +30,16 @@ void draw(){
   //do things about player1 
   player1.show(awidth,aheight);player1.move(awidth,aheight);
   player1.update();
+  i=0;
+  while(player1.shoot()){
+    bullets[i].x = player1.x
+    bullets[i].y = player1.y
+    bullets[i].dir = player1.dir
+    if bullets[i].hit() {
+        bullets[i] = NULL
+    }
+    i++;
+  }
 
   /********Do a loop to show all the bullets and remove one from array if its hit() returns true***********/
   /******************Ek jab click kre tab player1.shoot() should be called howt to do that***************************/
